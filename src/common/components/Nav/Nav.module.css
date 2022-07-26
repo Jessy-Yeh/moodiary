@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menuContainer {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+}
+
+.menu {
+  margin-right: 0.8rem;
+  background-color: rgb(197, 162, 44);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+}
