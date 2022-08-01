@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./Home.module.css";
@@ -19,11 +18,10 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>MooDiary</h1>
         <p className={styles.description}>
-          <code className={styles.code}>What is your mood today?</code>
+          <Link href="/create">
+            <a className={styles.code}>What is your mood today?</a>
+          </Link>
         </p>
-        <Link href="/create">
-          <a className={styles.emoji}>😀 🙁 🤪 🥰 😋 😢</a>
-        </Link>
       </main>
 
       <footer className={styles.footer}>Powered by JESSY YEH</footer>
