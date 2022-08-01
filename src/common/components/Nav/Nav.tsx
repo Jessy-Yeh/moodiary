@@ -11,8 +11,16 @@ export default function Nav() {
             <a>Home</a>
           </Link>
         </li>
-        <li className={styles.menu}>Mood History</li>
-        <li className={styles.menu}>Create Mood</li>
+        <li className={styles.menu}>
+          <Link href="/history">
+            <a>Mood History</a>
+          </Link>
+        </li>
+        <li className={styles.menu}>
+          <Link href="/create">
+            <a>Create Mood</a>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
