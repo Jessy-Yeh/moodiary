@@ -20,6 +20,7 @@ export default function Create() {
           onChange={(e) => setMoodStatus(e.target.value)}
           name="mood"
           value="happy"
+          id="happy"
         />
         <label htmlFor="happy">😀</label>
         <input
@@ -27,6 +28,7 @@ export default function Create() {
           onChange={(e) => setMoodStatus(e.target.value)}
           name="mood"
           value="sad"
+          id="sad"
         />
           <label htmlFor="sad">😢</label>
         <input
@@ -34,6 +36,7 @@ export default function Create() {
           onChange={(e) => setMoodStatus(e.target.value)}
           name="mood"
           value="angry"
+          id="angry"
         />
           <label htmlFor="angry">😠</label>
         <input
@@ -41,6 +44,7 @@ export default function Create() {
           onChange={(e) => setMoodStatus(e.target.value)}
           name="mood"
           value="anxious"
+          id="anxious"
         />
           <label htmlFor="anxious">😟</label>
         <input
