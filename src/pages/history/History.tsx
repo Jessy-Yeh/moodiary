@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Nav from "../../common/components/Nav/Nav";
 import { API_URL } from "../../common/constants";
 
+import styles from "./History.module.css";
+
 type THistoryData = {
   status: string;
   date: string;
@@ -23,7 +25,7 @@ export default function History() {
   return (
     <>
       <Nav />
-      <table>
+      <table className={styles.table}>
         <thead>
           <tr>
             <th>Mood</th>
