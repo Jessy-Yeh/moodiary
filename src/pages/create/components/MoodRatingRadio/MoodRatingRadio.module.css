@@ -1,0 +1,54 @@
+.emoji {
+  fill: rgb(242, 242, 242);
+  height: 3rem;
+  width: 3rem;
+  margin: 0.2rem;
+}
+
+.label {
+  position: relative;
+}
+
+.emojiInput {
+  position: absolute;
+  opacity: 0;
+}
+
+.emojiInput + .emoji {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.emojiInput + .emoji {
+  cursor: pointer;
+}
+
+.super-happy:hover + .super-happy-emoji,
+.super-happy:checked + .super-happy-emoji,
+.super-happy:focus + .super-happy-emoji {
+  fill: rgb(0, 109, 217);
+}
+
+.happy:hover + .happy-emoji,
+.happy:checked + .happy-emoji,
+.happy:focus + .happy-emoji {
+  fill: rgb(0, 204, 79);
+}
+
+.neutral:hover + .neutral-emoji,
+.neutral:checked + .neutral-emoji,
+.neutral:focus + .neutral-emoji {
+  fill: rgb(232, 214, 0);
+}
+
+.sad:hover + .sad-emoji,
+.sad:checked + .sad-emoji,
+.sad:focus + .sad-emoji {
+  fill: rgb(229, 132, 0);
+}
+
+.super-sad:hover + .super-sad-emoji,
+.super-sad:checked + .super-sad-emoji,
+.super-sad:focus + .super-sad-emoji {
+  fill: rgb(239, 42, 16);
+}
