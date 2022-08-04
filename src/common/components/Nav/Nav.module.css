@@ -1,6 +1,7 @@
 .nav {
   display: flex;
   justify-content: flex-end;
+  margin-top: 1rem;
 }
 
 .menuContainer {
@@ -10,8 +11,16 @@
 }
 
 .menu {
-  margin-right: 0.8rem;
-  background-color: rgb(197, 162, 44);
-  padding: 0.8rem 1rem;
-  border-radius: 10px;
+  margin-right: 3rem;
+  color: white;
+}
+
+.active {
+  padding: 0.3rem 0;
+  border-bottom: 5px solid rgb(92, 46, 202);
+  color: rgb(92, 46, 202);
+}
+
+.non-active {
+  color: rgb(120, 95, 178);
 }
