@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Nav />
       <Head>
-        <title>MooDirary</title>
+        <title>MooDiary</title>
         <meta name="description" content="Keep your mood in MooDiary" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
