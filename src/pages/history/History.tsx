@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Nav from "../../common/components/Nav/Nav";
 import { API_URL } from "../../common/constants";
+import MoodCard from "./components/MoodCard/MoodCard";
 
 import styles from "./History.module.css";
 
@@ -12,7 +13,7 @@ type THistoryData = {
 
 export default function History() {
   const [historyData, setHistoryData] = useState<THistoryData | null>(null);
-
+  console.log(historyData);
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(API_URL);
@@ -25,7 +26,7 @@ export default function History() {
   return (
     <>
       <Nav />
-      <table className={styles.table}>
+      {/* <table className={styles.table}>
         <thead>
           <tr>
             <th>Mood</th>
@@ -45,7 +46,22 @@ export default function History() {
             ))}
           </tbody>
         ) : null}
-      </table>
+      </table> */}
+
+      <div className={styles[`mood-card-container`]}>
+        {historyData ? (
+          <>
+            {historyData.map((mood, index) => (
+              <MoodCard
+                key={index}
+                mood={mood.status}
+                date={mood.date}
+                text={mood.text}
+              />
+            ))}
+          </>
+        ) : null}
+      </div>
     </>
   );
 }
