@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 import { API_URL } from "../../common/constants";
 import Nav from "../../common/components/Nav/Nav";
@@ -12,7 +12,9 @@ export default function Create() {
   const [date, setDate] = useState("");
   const [text, setText] = useState("");
 
-  async function postMood() {
+  async function postMood(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
     const postBody = {
       status: moodStatus,
       date: date,
@@ -41,7 +43,7 @@ export default function Create() {
       <Nav />
       <div className={styles.formContainer}>
         <h2 className={styles.title}>What&apos;s Your Mood Today?</h2>
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={postMood}>
           <p className={styles.subtitle}>I am feeling...</p>
 
           <div className={styles.ratingContainer}>
@@ -75,8 +77,6 @@ export default function Create() {
           </div>
 
           <p className={styles.subtitle}>Date</p>
-
-          <label htmlFor="date"></label>
           <input
             className={styles.date}
             type="date"
@@ -86,6 +86,7 @@ export default function Create() {
             min="2022-01-01"
             max="2090-12-31"
           />
+
           <p className={styles.subtitle}>
             I am{" "}
             <span className={styles.moodText}>
@@ -93,7 +94,6 @@ export default function Create() {
             </span>{" "}
             because...
           </p>
-          <label htmlFor="description"></label>
           <textarea
             className={styles.text}
             rows={3}
@@ -102,7 +102,7 @@ export default function Create() {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <button className={styles.submit} type="submit" onClick={postMood}>
+          <button className={styles.submit} type="submit">
             submit
           </button>
         </form>
