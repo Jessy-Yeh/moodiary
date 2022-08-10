@@ -16,7 +16,6 @@
 }
 
 .formContainer {
-  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,6 +57,8 @@
   padding: 1rem 1rem;
   width: 100%;
   border: none;
+  resize: vertical;
+  min-height: 80px;
 }
 
 .subtitle {
