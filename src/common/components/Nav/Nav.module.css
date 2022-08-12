@@ -24,3 +24,57 @@
 .non-active {
   color: rgb(120, 95, 178);
 }
+
+.burgerMenu {
+  width: 20px;
+  height: 2px;
+  background-color: rgb(229, 228, 226);
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+.burgermenu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+@media screen and (max-width: 600px) {
+  .burgerMenu {
+    display: flex;
+  }
+
+  .hideMenuOnMobile {
+    display: none;
+  }
+
+  .burgermenu-toggle {
+    display: flex;
+    position: absolute;
+  }
+
+  .nav {
+    /* margin-bottom: 2rem; */
+  }
+
+  .menuContainer {
+    border-bottom: 1px solid rgb(120, 95, 178);
+    position: relative;
+    top: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .menu {
+    margin-bottom: 1.5rem;
+  }
+
+  .menu a:hover {
+    color: rgb(92, 46, 202);
+  }
+}

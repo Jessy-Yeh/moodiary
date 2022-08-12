@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -6,9 +7,24 @@ import styles from "./Nav.module.css";
 export default function Nav() {
   const router = useRouter();
   const currentRoute = router.pathname;
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <nav className={styles.nav}>
-      <ul className={styles.menuContainer}>
+      <button
+        className={styles[`burgermenu-toggle`]}
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+      >
+        <div className={styles.burgerMenu}></div>
+        <div className={styles.burgerMenu}></div>
+        <div className={styles.burgerMenu}></div>
+      </button>
+      <ul
+        className={`${styles.menuContainer} ${
+          !isMenuOpen ? styles.hideMenuOnMobile : ""
+        }`}
+      >
         <li className={styles.menu}>
           <Link href="/">
             <a
