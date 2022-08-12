@@ -6,7 +6,7 @@ import MoodCard from "./components/MoodCard/MoodCard";
 import styles from "./History.module.css";
 
 type THistoryData = {
-  status: string;
+  status: "super-happy" | "happy" | "neutral" | "sad" | "super-sad";
   date: string;
   text: string;
 }[];
