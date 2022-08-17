@@ -100,6 +100,10 @@
     width: 100%;
     flex-direction: column;
   }
+
+  .marquee {
+    width: 300px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

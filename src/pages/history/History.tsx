@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import Nav from "../../common/components/Nav/Nav";
 import { API_URL } from "../../common/constants";
 import MoodCard from "./components/MoodCard/MoodCard";
@@ -23,35 +24,20 @@ export default function History() {
     getData();
   }, []);
 
+  // const postsSortedByDate = [...historyData].sort((a, b) => {
+  //   const firstdate = Number(a.date.replace("/", ""));
+  //   const seconddate = Number(b.date.replace("/", ""));
+  //   return firstdate - seconddate;
+  // });
+
   return (
     <>
       <Nav />
-      {/* <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Mood</th>
-            <th>Date</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-
-        {historyData ? (
-          <tbody>
-            {historyData.map((mood, idx) => (
-              <tr key={idx}>
-                <td>{mood.status}</td>
-                <td>{mood.date}</td>
-                <td>{mood.text}</td>
-              </tr>
-            ))}
-          </tbody>
-        ) : null}
-      </table> */}
 
       <div className={styles[`mood-card-container`]}>
         {historyData ? (
           <>
-            {historyData.map((mood, index) => (
+            {historyData?.map((mood, index) => (
               <MoodCard
                 key={index}
                 mood={mood.status}
