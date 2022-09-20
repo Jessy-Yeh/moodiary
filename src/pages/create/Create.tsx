@@ -6,6 +6,7 @@ import Nav from "../../common/components/Nav/Nav";
 import MoodRatingRadio from "./components/MoodRatingRadio/MoodRatingRadio";
 
 import styles from "./Create.module.css";
+import formatDate from "./utils/formatDate";
 
 export default function Create() {
   const [moodStatus, setMoodStatus] = useState("neutral");
@@ -81,7 +82,7 @@ export default function Create() {
             className={styles.date}
             type="date"
             id="date"
-            value={date}
+            value={!date ? formatDate(new Date()) : date}
             onChange={(e) => setDate(e.target.value)}
             min="2022-01-01"
             max="2090-12-31"
