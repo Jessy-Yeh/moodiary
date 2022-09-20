@@ -8,7 +8,7 @@ import MoodRatingRadio from "./components/MoodRatingRadio/MoodRatingRadio";
 import styles from "./Create.module.css";
 
 export default function Create() {
-  const [moodStatus, setMoodStatus] = useState("");
+  const [moodStatus, setMoodStatus] = useState("neutral");
   const [date, setDate] = useState("");
   const [text, setText] = useState("");
 
