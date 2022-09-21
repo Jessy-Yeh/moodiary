@@ -17,16 +17,12 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>MooDiary</h1>
-        <div className={styles.marquee}>
-          <p className={styles.description}>
-            <Link href="/create">
-              <a className={styles.opening}>
-                What is your mood today? What is your mood today? What is your
-                mood today?
-              </a>
-            </Link>
-          </p>
-        </div>
+
+        <button className={styles.description}>
+          <Link href="/create">
+            <a className={styles.opening}>What is your mood today?</a>
+          </Link>
+        </button>
       </main>
 
       <footer className={styles.footer}>Powered by JESSY YEH</footer>
