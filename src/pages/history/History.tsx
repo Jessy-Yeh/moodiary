@@ -3,10 +3,16 @@ import { useEffect, useState } from "react";
 import Nav from "../../common/components/Nav/Nav";
 import { API_URL } from "../../common/constants";
 import MoodCard from "./components/MoodCard/MoodCard";
+import formatDate from "./utils/formatDate";
+import ClearDateBtn from "./components/ClearDateBtn/ClearDateBtn";
+import Calendar from "react-calendar";
+// import "../../common/styles/calendar.css";
 
 import styles from "./History.module.css";
+import ClearDate from "./components/ClearDateBtn/ClearDateBtn";
 
 type THistoryData = {
+  hide: boolean;
   status: "super-happy" | "happy" | "neutral" | "sad" | "super-sad";
   date: string;
   text: string;
@@ -14,7 +20,7 @@ type THistoryData = {
 
 export default function History() {
   const [historyData, setHistoryData] = useState<THistoryData | null>(null);
-  console.log(historyData);
+
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(API_URL);
@@ -24,29 +30,36 @@ export default function History() {
     getData();
   }, []);
 
-  // const postsSortedByDate = [...historyData].sort((a, b) => {
-  //   const firstdate = Number(a.date.replace("/", ""));
-  //   const seconddate = Number(b.date.replace("/", ""));
-  //   return firstdate - seconddate;
-  // });
+  const [date, setDate] = useState<Date | null>(null);
+  const isFiltered = date !== null;
+
+  const historyDataToDisplay = isFiltered
+    ? historyData?.filter((mood) => {
+        const formattedDate = formatDate(date);
+        return mood.date === formattedDate;
+      })
+    : historyData;
 
   return (
     <>
       <Nav />
-
+      <Calendar
+        onChange={setDate}
+        value={date}
+        maxDate={new Date()}
+        // onClickDay={alert(`Clicked date is ${value}`)}
+        // selectRange={true}
+      />
+      <ClearDateBtn setDate={setDate} />
       <div className={styles[`mood-card-container`]}>
-        {historyData ? (
-          <>
-            {historyData?.map((mood, index) => (
-              <MoodCard
-                key={index}
-                mood={mood.status}
-                date={mood.date}
-                text={mood.text}
-              />
-            ))}
-          </>
-        ) : null}
+        {historyDataToDisplay?.map((mood, index) => (
+          <MoodCard
+            key={index}
+            mood={mood.status}
+            date={mood.date}
+            text={mood.text}
+          />
+        ))}
       </div>
     </>
   );
