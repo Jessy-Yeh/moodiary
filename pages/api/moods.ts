@@ -10,27 +10,27 @@ type TMoodHistoryData = {
 const dummyMoodHistoryData = [
   {
     status: "happy",
-    date: "01/Aug/2022",
+    date: "01/09/2022",
     text: "Mao is gonna play table tennis today~",
   },
   {
     status: "sad",
-    date: "16/July/2022",
+    date: "16/04/2022",
     text: "We didn't know what to eat :(",
   },
   {
     status: "super-sad",
-    date: "31/July/2022",
+    date: "20/09/2022",
     text: "We didn't know what to eat :(",
   },
   {
     status: "super-happy",
-    date: "02/July/2022",
+    date: "02/07/2022",
     text: "A meeting of the government's vaccine experts - the Joint Committee on Vaccination and Immunisation - recommended a rapid booster campaign for children aged one to nine.The aim is two-fold. First to reduce the risk of any child catching the virus and being paralysed and also to raise immunity levels so the virus finds it harder to spread",
   },
   {
     status: "neutral",
-    date: "31/August/2022",
+    date: "31/08/2022",
     text: "We didn't know what to eat :(",
   },
 ];
