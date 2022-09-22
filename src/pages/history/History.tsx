@@ -43,14 +43,16 @@ export default function History() {
   return (
     <>
       <Nav />
-      <Calendar
-        onChange={setDate}
-        value={date}
-        maxDate={new Date()}
-        // onClickDay={alert(`Clicked date is ${value}`)}
-        // selectRange={true}
-      />
-      <ClearDateBtn setDate={setDate} />
+      <div className={styles[`calendar-container`]}>
+        <Calendar
+          onChange={setDate}
+          value={date}
+          maxDate={new Date()}
+          // onClickDay={alert(`Clicked date is ${value}`)}
+          // selectRange={true}
+        />
+        <ClearDateBtn setDate={setDate} />
+      </div>
       <div className={styles[`mood-card-container`]}>
         {historyDataToDisplay?.map((mood, index) => (
           <MoodCard
